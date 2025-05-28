@@ -49,9 +49,6 @@
     "autoprefixer": "^10.4.21",
     "tailwindcss": "^4.1.7",
     "vite": "^6.3.5"
-  },
-  "overrides": {
-  "lightningcss-win32-x64-msvc": null
-}
+  }
 
 }
