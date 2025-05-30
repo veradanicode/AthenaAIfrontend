@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/nav.jsx";
 import WidgetCard from "../components/WidgetCard";
 import '../index.css'
+import { BASE_URL } from "../../config";
 
 
 const text = [
@@ -36,7 +37,7 @@ const Dashboard = () => {
 
   const performSearch = async (query) => {
    if (!query) {
-      setSearchResults(null); // clear results if query is empty
+      setSearchResults(null); 
       setIsLoading(false);
       return;
     }
@@ -46,7 +47,7 @@ const Dashboard = () => {
     try {
       const response = await fetch(`${BASE_URL}/api/search?q=${encodeURIComponent(query)}`, {
         method: 'GET',
-        credentials: 'include',  // if using cookies for auth
+        credentials: 'include', 
       });
 
       if (!response.ok) {
@@ -54,7 +55,7 @@ const Dashboard = () => {
       }
 
       const results = await response.json();
-      setSearchResults(results);  // save results to state     
+      setSearchResults(results);    
       console.log('Search results:', results);
 
     } catch (error) {
@@ -70,7 +71,7 @@ const Dashboard = () => {
     const fetchDashboardData = async () => {
         try {
         const userId = localStorage.getItem('userId');
-        const response = await fetch(`http://localhost:5000/api/dashboard/${userId}`, {
+        const response = await fetch(`${ BASE_URL}/api/dashboard/${userId}`, {
           method: "GET",
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
