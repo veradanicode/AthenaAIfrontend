@@ -46,7 +46,7 @@ const Signup = () => {
   {/* Left side */}
  <div className="md:flex w-1/2 bg-indigo-600 items-center justify-center">
     <img
-      src="./img/test.jpeg" 
+      src="../img/test.jpeg" 
       alt="Signup Illustration"
       className="w-full h-full object-cover"
     />
