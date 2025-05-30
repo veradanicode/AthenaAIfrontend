@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/accordion"
 
 
-const studentImage = './img/studentImage1.jpeg';
+const studentImage = '/img/studentImage1.jpeg';
 
 
 const LandingPage = () => {

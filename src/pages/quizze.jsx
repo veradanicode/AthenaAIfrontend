@@ -58,7 +58,6 @@ const Quizze = () => {
     if (selected) return;
     setSelected(option);
     const currentQ = quizQuestions[current];
-    // answer field should be full text
     if (option === currentQ.answer) {
       setScore(s => s + 1);
     }

@@ -10,7 +10,7 @@ const LandingNavbar = () => {
         <a href="/" className="flex items-center font-semibold text-lg text-gray-800">
           {/*actual logo component  */}
           <div className="w-6 h-6 mr-2 rounded-sm ">
-            <img src="./img/owlet.png" alt="owlet.png" />
+            <img src="/img/owlet.png" alt="owlet.png" />
           </div>
           ATHENA
         </a>
