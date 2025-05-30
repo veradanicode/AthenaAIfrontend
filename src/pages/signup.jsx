@@ -1,7 +1,7 @@
 // pages/signup.jsx
 import React ,{ useState }from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BASE_URL } from "../config";
+import { BASE_URL } from "../../config";
 
 const Signup = () => {
   const navigate = useNavigate();

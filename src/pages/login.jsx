@@ -1,7 +1,7 @@
 // pages/login.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BASE_URL } from "../config";
+import { BASE_URL } from "config.js";
 
 const Login = () => {
     const [formData, setFormData] = useState({

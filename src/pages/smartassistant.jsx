@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { ThemeContext } from '../components/ThemeContext';
-import { BASE_URL } from "../config";
+import { BASE_URL } from "config.js";
 
 function SmartAssistant() {
   const [query, setQuery] = useState('');

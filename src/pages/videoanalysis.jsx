@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../components/ThemeContext';
-import { BASE_URL } from "../config";
+import { BASE_URL } from "../../config";
 
 function VideoAnalysis() {
   const { theme } = useContext(ThemeContext);
