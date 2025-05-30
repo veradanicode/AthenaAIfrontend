@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from "../../config";
-import testImg from '../img/test.jpeg';
+
 const Login = () => {
     const [formData, setFormData] = useState({
     email: '',
@@ -48,7 +48,7 @@ const Login = () => {
   {/* Left side - Image/Illustration */}
   <div className=" md:flex w-1/2 bg-indigo-600 items-center justify-center">
     <img
-      src={testImg}
+      src="./img/test.jpeg" 
       alt="Login Illustration"
       className="w-full h-full object-cover"
     />

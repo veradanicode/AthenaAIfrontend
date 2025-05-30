@@ -44,7 +44,7 @@ const Dashboard = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch(`http://localhost:5000/api/search?q=${encodeURIComponent(query)}`, {
+      const response = await fetch(`${BASE_URL}/api/search?q=${encodeURIComponent(query)}`, {
         method: 'GET',
         credentials: 'include',  // if using cookies for auth
       });
