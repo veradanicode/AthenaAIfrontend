@@ -33,7 +33,7 @@ const Login = () => {
     });
 
     const data = await res.json();
-    if (!res.ok) throw new Error(data.message);
+    if (!res.ok) throw new ESrror(data.message);
 
     alert("Login successful!");
     navigate('/dashboard'); 
@@ -48,7 +48,7 @@ const Login = () => {
   {/* Left side - Image/Illustration */}
   <div className=" md:flex w-1/2 bg-indigo-600 items-center justify-center">
     <img
-      src="../img/test.jpeg" 
+      src="/img/test.jpeg" 
       alt="Login Illustration"
       className="w-full h-full object-cover"
     />
