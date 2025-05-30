@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { ThemeContext } from '../components/ThemeContext';
+import { BASE_URL } from "../config";
 
 const Quizze = () => {
   const { theme } = useContext(ThemeContext);
@@ -16,7 +17,7 @@ const Quizze = () => {
 
   // Fetch history once on mount
   useEffect(() => {
-    fetch('http://localhost:5000/api/quiz/progress')
+    fetch(`${BASE_URL}/api/quiz/progress`)
       .then(res => res.json())
       .then(data => setHistory(data.progress || []))
       .catch(console.error);
@@ -39,7 +40,7 @@ const Quizze = () => {
     formData.append('file', file);
 
     try {
-      const response = await fetch('http://localhost:5000/api/documents/upload', {
+      const response = await fetch(`${BASE_URL}/api/quiz/progress`, {
         method: 'POST',
         body: formData,
       });
@@ -66,13 +67,13 @@ const Quizze = () => {
   const saveResult = async () => {
     const payload = { score, total: quizQuestions.length, date: new Date(), className };
     try {
-      await fetch('http://localhost:5000/api/quiz/progress', {
+      await fetch(`${BASE_URL}/api/quiz/progress`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
       // refresh history
-      const res = await fetch('http://localhost:5000/api/quiz/progress');
+      const res = await fetch(`${BASE_URL}/api/quiz/progress`);
       const d = await res.json();
       setHistory(d.progress || []);
     } catch (err) {

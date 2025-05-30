@@ -16,8 +16,7 @@ const Dashboard = () => {
   const [searchQuery, setSearchQuery] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [debounceTimeout, setDebounceTimeout] = useState(null);
-  const [searchResults, setSearchResults] = useState(null); // ✅ this line is important
-
+  const [searchResults, setSearchResults] = useState(null); 
 
   
 
@@ -29,7 +28,7 @@ const Dashboard = () => {
 
     const timeout = setTimeout(() => {
       performSearch(query);
-    }, 500); // wait 500ms after last keystroke
+    }, 500); 
 
     setDebounceTimeout(timeout);
   };
@@ -101,7 +100,7 @@ const Dashboard = () => {
       <div className="relative w-full h-[60vh] overflow-hidden">
         {/* Overlay Content */}
         <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-center px-4">
-            <div className="twinkle-bg"></div> {/* animated stars */}
+            <div className="twinkle-bg"></div> 
           <h2 className="text-4xl font-bold mb-4">
             Unlock a Smarter Way to Learn
           </h2>

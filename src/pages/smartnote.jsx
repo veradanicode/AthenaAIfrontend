@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { ThemeContext } from '../components/ThemeContext';
+import { BASE_URL } from "../config";
 
 function SmartNotes() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -18,7 +19,6 @@ function SmartNotes() {
 
   const handleSearchInputChange = (event) => {
     setSearchTerm(event.target.value);
-    // Implement search filtering of displayed content if needed
   };
 
   const handleFileDrop = (event) => {
@@ -139,8 +139,7 @@ function SmartNotes() {
         <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Generate Quiz</button>
       </div>
 
-      {/* Placeholder for Previously Generated Notes (Not explicitly shown in this view) */}
-      {/* You would likely navigate to a different view or have a toggle to see existing notes */}
+      
     </div>
   );
 }

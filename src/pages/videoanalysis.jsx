@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../components/ThemeContext';
+import { BASE_URL } from "../config";
 
 function VideoAnalysis() {
   const { theme } = useContext(ThemeContext);
@@ -16,7 +17,7 @@ function VideoAnalysis() {
 
   setLoading(true);
   try {
-    const response = await fetch('http://localhost:5000/api/video/analyze-url', {
+    const response = await fetch(`${BASE_URL}/api/video/analyze-url`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -46,7 +47,7 @@ function VideoAnalysis() {
 
   setLoading(true);
   try {
-    const response = await fetch('http://localhost:5000/api/video/analyze', {
+    const response = await fetch(`${BASE_URL}/api/video/analyze`, {
       method: 'POST',
       body: formData,
     });
@@ -157,9 +158,9 @@ function VideoAnalysis() {
                 ) : (
                   <p className={textSecondary}>Summary notes will appear here after analysis.</p>
                 )}
-              {/* Example: <TranscriptionResults text={transcriptionText} /> */}
+              
             </div>
-            {/* Add more result placeholders as needed */}
+            
           </div>
         </div>
       </div>

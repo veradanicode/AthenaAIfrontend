@@ -1,6 +1,7 @@
 // pages/login.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from "../config";
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -25,7 +26,7 @@ const Login = () => {
     setError('');
 
   try {
-    const res = await fetch('http://localhost:5000/api/users/login', {
+    const res = await fetch(`${BASE_URL}/api/users/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
@@ -35,7 +36,7 @@ const Login = () => {
     if (!res.ok) throw new Error(data.message);
 
     alert("Login successful!");
-    navigate('/dashboard'); // or wherever your dashboard route is
+    navigate('/dashboard'); 
   } catch (err) {
     setError(err.message);
   }

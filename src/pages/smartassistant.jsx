@@ -1,10 +1,11 @@
 import React, { useState, useContext } from 'react';
 import { ThemeContext } from '../components/ThemeContext';
+import { BASE_URL } from "../config";
 
 function SmartAssistant() {
   const [query, setQuery] = useState('');
   const [assistantResponse, setAssistantResponse] = useState('');
-  const [activeFeature, setActiveFeature] = useState('chat'); // Default to chat
+  const [activeFeature, setActiveFeature] = useState('chat'); 
   const { theme } = useContext(ThemeContext);
 
   // Define theme-based styles
@@ -22,17 +23,16 @@ function SmartAssistant() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // In a real application, you would send the query to your study assistant backend
-    // and update the assistantResponse with the received information.
+    
     const simulatedResponse = `Simulated response for your query: "${query}". This could include explanations, summaries, or answers based on your study materials.`;
     setAssistantResponse(simulatedResponse);
-    setQuery(''); // Clear the input after submitting
+    setQuery(''); 
   };
 
   const handleFeatureChange = (feature) => {
     setActiveFeature(feature);
-    setQuery(''); // Clear the query when switching features
-    setAssistantResponse(''); // Clear the response when switching features
+    setQuery(''); 
+    setAssistantResponse(''); 
   };
 
   return (
@@ -72,7 +72,7 @@ function SmartAssistant() {
         >
           Practice Questions
         </button>
-        {/* Add more features as needed */}
+        
       </div>
 
       {/* Main Content Area */}
@@ -161,11 +161,11 @@ function SmartAssistant() {
             <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2.5 px-4 rounded focus:outline-none focus:shadow-outline mt-2">
               Start Practice
             </button>
-            {/* Placeholder for question display and answer input */}
+            
           </div>
         )}
 
-        {/* You can add more UI for other features here */}
+        
       </div>
     </div>
   );

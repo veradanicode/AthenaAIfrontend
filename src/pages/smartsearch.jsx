@@ -1,10 +1,11 @@
 import React, { useState, useContext } from 'react';
 import { ThemeContext } from '../components/ThemeContext';
+import { BASE_URL } from "../config";
 
 function SmartAssistant() {
   const [query, setQuery] = useState('');
   const [assistantResponse, setAssistantResponse] = useState('');
-  const [activeFeature, setActiveFeature] = useState('chat'); // Default to chat
+  const [activeFeature, setActiveFeature] = useState('chat'); 
   const { theme } = useContext(ThemeContext);
 
   // Define theme-based styles
@@ -22,17 +23,16 @@ function SmartAssistant() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // In a real application, you would send the query to your study assistant backend
-    // and update the assistantResponse with the received information.
+    
     const simulatedResponse = `Simulated response for your query: "${query}". This could include explanations, summaries, or answers based on your study materials.`;
     setAssistantResponse(simulatedResponse);
-    setQuery(''); // Clear the input after submitting
+    setQuery(''); 
   };
 
   const handleFeatureChange = (feature) => {
     setActiveFeature(feature);
-    setQuery(''); // Clear the query when switching features
-    setAssistantResponse(''); // Clear the response when switching features
+    setQuery(''); 
+    setAssistantResponse(''); 
   };
 
   return (

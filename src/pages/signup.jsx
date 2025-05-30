@@ -1,7 +1,7 @@
 // pages/signup.jsx
 import React ,{ useState }from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { BASE_URL } from "../config";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ const Signup = () => {
     e.preventDefault();
     setError('');
     try {
-      const res = await fetch('http://localhost:5000/api/users/register', {
+      const res = await fetch(`${BASE_URL}/api/users/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -46,7 +46,7 @@ const Signup = () => {
   {/* Left side */}
  <div className="md:flex w-1/2 bg-indigo-600 items-center justify-center">
     <img
-      src="./img/test.jpeg" // Replace with your actual image path
+      src="./img/test.jpeg" 
       alt="Signup Illustration"
       className="w-full h-full object-cover"
     />

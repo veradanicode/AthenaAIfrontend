@@ -1,6 +1,6 @@
 import React, { useState, useRef, useContext } from 'react';
 import { PlayIcon, PauseIcon, MicrophoneIcon, SpeakerWaveIcon, ArrowUpTrayIcon as UploadIcon } from '@heroicons/react/24/solid';
-import { SunIcon, MoonIcon } from '@heroicons/react/24/outline'; // For theme toggle icon (optional here)
+import { SunIcon, MoonIcon } from '@heroicons/react/24/outline'; 
 import { ThemeContext } from '../components/ThemeContext';
 
 function Audiofy() {
@@ -14,7 +14,6 @@ function Audiofy() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [processing, setProcessing] = useState(false);
 
-  // Define theme-related variables HERE, before the return statement
   const bgColor = theme === 'dark' ? 'bg-gray-900' : 'bg-gray-100';
   const textColor = theme === 'dark' ? 'text-white' : 'text-gray-800';
   const bgSecondary = theme === 'dark' ? 'bg-gray-800' : 'bg-white';
@@ -32,15 +31,15 @@ function Audiofy() {
 
   const handleGenerateAudio = async () => {
     setProcessing(true);
-    setAudioUrl(''); // Clear previous audio
-    // Simulate API call
+    setAudioUrl(''); 
+    
     await new Promise(resolve => setTimeout(resolve, 1500));
     const simulatedAudioUrl = 'https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3';
     setAudioUrl(simulatedAudioUrl);
     setProcessing(false);
-    setIsPlaying(false); // Reset play state
+    setIsPlaying(false); 
     if (audioRef.current) {
-      audioRef.current.load(); // Ensure audio reloads
+      audioRef.current.load(); 
     }
   };
 
@@ -51,7 +50,7 @@ function Audiofy() {
   const handleTranscribeAudio = async () => {
     if (selectedFile) {
       setProcessing(true);
-      setTranscription(''); // Clear previous transcription
+      setTranscription(''); 
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 2000));
       const simulatedTranscription = `Simulated transcription of "${selectedFile.name}".`;
@@ -106,8 +105,7 @@ function Audiofy() {
           <MicrophoneIcon className="w-5 h-5 mr-2" />
           Speech to Text
         </button>
-        {/* Theme Toggle (you can place it here or in a more global layout) */}
-        {/* <ThemeToggle /> */}
+        
       </div>
 
       {/* Main Content */}
@@ -125,7 +123,7 @@ function Audiofy() {
               rows={5}
             />
             <button
-              onClick={handleGenerateAudio} // This is where the function is called
+              onClick={handleGenerateAudio} 
               className={`${buttonPrimary} ${processing ? buttonDisabled : ''}`}
               disabled={processing}
             >
