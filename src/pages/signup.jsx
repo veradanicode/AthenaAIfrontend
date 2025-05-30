@@ -35,7 +35,7 @@ const Signup = () => {
       if (!res.ok) throw new Error(data.message);
       
       alert("Signup successful!");
-      navigate('./pages/dashboard.jsx');
+      navigate('/dashboard.jsx');
     } catch (err) {
       setError(err.message);
     }
