@@ -18,11 +18,12 @@ const Login = () => {
   }));
 };
   const handleSubmit = async (e) => {
+    e.preventDefault();
     if (!formData.email || !formData.password) {
   return setError('Please enter both email and password.');
   }
 
-    e.preventDefault();
+    
     setError('');
 
   try {
@@ -33,7 +34,7 @@ const Login = () => {
     });
 
     const data = await res.json();
-    if (!res.ok) throw new ESrror(data.message || "Login failed");
+    if (!res.ok) throw new Error(data.message || "Login failed");
 
     alert("Login successful!");
     navigate('/dashboard'); 
