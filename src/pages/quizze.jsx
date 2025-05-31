@@ -22,7 +22,7 @@ const Quizze = () => {
       .then(data => setHistory(data.progress || []))
       .catch(console.error);
   }, []);
-
+a
   const handleFileChange = e => setFile(e.target.files[0]);
 
   const handleUpload = async () => {
@@ -40,7 +40,7 @@ const Quizze = () => {
     formData.append('file', file);
 
     try {
-      const response = await fetch(`${BASE_URL}/api/quiz/progress`, {
+      const response = await fetch(`${BASE_URL}/api/documents/upload`, {
         method: 'POST',
         body: formData,
       });

@@ -10,8 +10,8 @@ import SmartNotes from "./pages/smartnote.jsx";
 import SmartAssistant from "./pages/smartassistant.jsx";
 import Audiofy from "./pages/audiofy.jsx";
 import LandingPage from "./pages/landingpage.jsx";
-import Login from "./pages/login.jsx";         // <-- create this
-import Signup from "./pages/signup.jsx";       // <-- create this
+import Login from "./pages/login.jsx";         
+import Signup from "./pages/signup.jsx";       
 
 import { ThemeProvider } from './components/ThemeContext';
 
