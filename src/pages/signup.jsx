@@ -2,6 +2,7 @@
 import React ,{ useState }from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from "../../config";
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -115,9 +116,9 @@ const Signup = () => {
       {/* Already have an account */}
       <p className="text-sm text-gray-500 mt-6 text-center">
         Already have an account?{' '}
-        <a href="/login" className="text-indigo-600 hover:underline">
+        <Link to ="/login" className="text-indigo-600 hover:underline">
           Log in
-        </a>
+        </Link>
       </p>
 
       {/* Terms */}
