@@ -1,1 +1,1 @@
-export const BASE_URL = "https://https://athenaaibackend.onrender.com";
+export const BASE_URL = "https://athenaaibackend.onrender.com";
