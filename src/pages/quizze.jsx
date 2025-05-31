@@ -22,7 +22,7 @@ const Quizze = () => {
       .then(data => setHistory(data.progress || []))
       .catch(console.error);
   }, []);
-a
+
   const handleFileChange = e => setFile(e.target.files[0]);
 
   const handleUpload = async () => {
